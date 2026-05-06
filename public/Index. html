@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Arsenal Final</title>
+
+  <style>
+    body{
+      background:#d00000;
+      color:white;
+      text-align:center;
+      font-family:Arial;
+      padding-top:120px;
+    }
+
+    h1{
+      font-size:40px;
+    }
+
+    button{
+      padding:15px 30px;
+      font-size:18px;
+      border:none;
+      border-radius:10px;
+      background:white;
+      color:#d00000;
+      cursor:pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>⚽ Arsenal is in the Champions League Final 🔥</h1>
+
+<button onclick="showMessage()">
+Celebrate
+</button>
+
+<script>
+  function showMessage(){
+    alert("Come On Arsenal! ❤️🤍");
+  }
+</script>
+
+</body>
+</html> 
