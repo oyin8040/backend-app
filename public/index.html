@@ -1,45 +1,90 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Arsenal Final</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body{
-      background:#d00000;
-      color:white;
-      text-align:center;
-      font-family:Arial;
-      padding-top:120px;
+<title>Arsenal Final</title>
+
+<style>
+
+body{
+    margin:0;
+    overflow:hidden;
+    background:linear-gradient(to right,#8B0000,#ff0000);
+    font-family:Arial;
+    color:white;
+    text-align:center;
+}
+
+.container{
+    margin-top:100px;
+}
+
+h1{
+    font-size:45px;
+}
+
+p{
+    font-size:22px;
+}
+
+button{
+    padding:15px 35px;
+    font-size:20px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    background:white;
+    color:#d00000;
+    margin-top:20px;
+}
+
+.ball{
+    position:absolute;
+    bottom:50px;
+    left:-100px;
+    font-size:70px;
+    animation:roll 8s linear infinite;
+}
+
+@keyframes roll{
+    0%{
+        left:-100px;
+        transform:rotate(0deg);
     }
 
-    h1{
-      font-size:40px;
+    100%{
+        left:110%;
+        transform:rotate(720deg);
     }
+}
 
-    button{
-      padding:15px 30px;
-      font-size:18px;
-      border:none;
-      border-radius:10px;
-      background:white;
-      color:#d00000;
-      cursor:pointer;
-    }
-  </style>
+</style>
 </head>
 
 <body>
 
+<div class="container">
+
 <h1>⚽ Arsenal is in the Champions League Final 🔥</h1>
 
-<button onclick="showMessage()">
-Celebrate
+<p>The Gunners are back ❤️🤍</p>
+
+<button onclick="celebrate()">
+Celebrate 🎉
 </button>
 
+</div>
+
+<div class="ball">⚽</div>
+
 <script>
-  function showMessage(){
-    alert("Come On Arsenal! ❤️🤍");
-  }
+
+function celebrate(){
+    alert("Come On Arsenal ❤️🤍");
+}
+
 </script>
 
 </body>
