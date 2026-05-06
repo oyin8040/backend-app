@@ -4,59 +4,76 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Football Voting App</title>
+<title>Football Battle Voting</title>
 
 <style>
 
 body{
     margin:0;
+    padding:20px;
     font-family:Arial;
-    background:linear-gradient(to right,#8B0000,#ff0000);
+    background:#111;
     color:white;
-    text-align:center;
-}
-
-.container{
-    padding-top:80px;
 }
 
 h1{
-    font-size:40px;
+    text-align:center;
+    color:#ffcc00;
 }
 
-.vote-box{
-    margin-top:40px;
+.match{
+    background:#1e1e1e;
+    padding:20px;
+    margin-top:25px;
+    border-radius:15px;
+}
+
+.players{
+    font-size:24px;
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
 }
 
 button{
-    padding:15px 30px;
-    margin:15px;
+    padding:12px 20px;
     border:none;
     border-radius:10px;
-    font-size:20px;
+    font-size:18px;
     cursor:pointer;
 }
 
-.arsenal{
-    background:white;
-    color:red;
+.home{
+    background:#d00000;
+    color:white;
 }
 
-.psg{
-    background:blue;
+.draw{
+    background:gray;
+    color:white;
+}
+
+.away{
+    background:#0096ff;
     color:white;
 }
 
 .result{
-    margin-top:40px;
-    font-size:28px;
+    text-align:center;
+    margin-top:15px;
+    font-size:18px;
 }
 
 .ball{
+    text-align:center;
     font-size:60px;
-    animation:spin 3s linear infinite;
-    display:inline-block;
-    margin-top:20px;
+    animation:spin 4s linear infinite;
 }
 
 @keyframes spin{
@@ -70,49 +87,87 @@ button{
 
 <body>
 
-<div class="container">
-
-<h1>⚽ Champions League Final Voting App 🔥</h1>
-
-<p>Who will win the final?</p>
+<h1>⚽ Football Combat Voting Arena 🔥</h1>
 
 <div class="ball">⚽</div>
 
-<div class="vote-box">
+<!-- Match 1 -->
+<div class="match">
 
-<button class="arsenal" onclick="voteArsenal()">
-❤️ Arsenal
+<div class="players">
+🔥 Saka VS McGinn 🔥
+</div>
+
+<div class="buttons">
+
+<button class="home" onclick="homeVote('m1home')">
+Home
 </button>
 
-<button class="psg" onclick="votePSG()">
-💙 PSG
+<button class="draw" onclick="drawVote('m1draw')">
+Draw
+</button>
+
+<button class="away" onclick="awayVote('m1away')">
+Away
 </button>
 
 </div>
 
 <div class="result">
+Home: <span id="m1home">0</span> |
+Draw: <span id="m1draw">0</span> |
+Away: <span id="m1away">0</span>
+</div>
 
-<p>Arsenal Votes: <span id="arsenalVotes">0</span></p>
+</div>
 
-<p>PSG Votes: <span id="psgVotes">0</span></p>
+<!-- Match 2 -->
+<div class="match">
 
+<div class="players">
+⚡ Victor Osimhen VS Haaland ⚡
+</div>
+
+<div class="buttons">
+
+<button class="home" onclick="homeVote('m2home')">
+Home
+</button>
+
+<button class="draw" onclick="drawVote('m2draw')">
+Draw
+</button>
+
+<button class="away" onclick="awayVote('m2away')">
+Away
+</button>
+
+</div>
+
+<div class="result">
+Home: <span id="m2home">0</span> |
+Draw: <span id="m2draw">0</span> |
+Away: <span id="m2away">0</span>
 </div>
 
 </div>
 
 <script>
 
-let arsenal = 0;
-let psg = 0;
-
-function voteArsenal(){
-    arsenal++;
-    document.getElementById("arsenalVotes").innerText = arsenal;
+function homeVote(id){
+    let count = document.getElementById(id);
+    count.innerText = Number(count.innerText) + 1;
 }
 
-function votePSG(){
-    psg++;
-    document.getElementById("psgVotes").innerText = psg;
+function drawVote(id){
+    let count = document.getElementById(id);
+    count.innerText = Number(count.innerText) + 1;
+}
+
+function awayVote(id){
+    let count = document.getElementById(id);
+    count.innerText = Number(count.innerText) + 1;
 }
 
 </script>
