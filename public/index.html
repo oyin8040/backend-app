@@ -4,19 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Football Voting Arena</title>
+<title>ArenaBet</title>
 
 <style>
 
-body{
+*{
     margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
     font-family:Arial;
-    background:#0d0d0d;
+    background:#121212;
     color:white;
     padding-bottom:90px;
 }
 
-/* HEADER */
+/* TOP HEADER */
 
 .header{
     background:#111;
@@ -24,27 +29,170 @@ body{
     display:flex;
     justify-content:space-between;
     align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
     border-bottom:2px solid #222;
 }
 
 .logo{
-    font-size:24px;
-    color:#ffcc00;
+    color:#00ff66;
+    font-size:26px;
     font-weight:bold;
 }
 
 .wallet{
-    background:#ffcc00;
+    background:#00ff66;
     color:black;
     padding:8px 15px;
-    border-radius:10px;
+    border-radius:20px;
     font-weight:bold;
 }
 
-/* PROFILE */
+/* LIVE BANNER */
 
-.profile-section{
+.banner{
+    background:linear-gradient(to right,#00aa44,#00ff66);
+    padding:15px;
+    text-align:center;
+    font-weight:bold;
+    color:black;
+}
+
+/* CATEGORY MENU */
+
+.categories{
+    display:flex;
+    overflow-x:auto;
+    gap:10px;
+    padding:15px;
+    background:#1b1b1b;
+}
+
+.category{
+    background:#2a2a2a;
+    padding:10px 18px;
+    border-radius:20px;
+    white-space:nowrap;
+}
+
+.active-category{
+    background:#00ff66;
+    color:black;
+    font-weight:bold;
+}
+
+/* MATCH CARD */
+
+.match{
+    background:#1c1c1c;
+    margin:15px;
+    border-radius:15px;
+    overflow:hidden;
+}
+
+.match-header{
+    background:#2a2a2a;
+    padding:10px;
+    display:flex;
+    justify-content:space-between;
+    font-size:14px;
+}
+
+.live{
+    color:red;
+    font-weight:bold;
+}
+
+.teams{
     padding:20px;
+}
+
+.team-row{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:15px;
+    font-size:18px;
+}
+
+.odds{
+    display:flex;
+    gap:8px;
+    padding:15px;
+}
+
+.odd-btn{
+    flex:1;
+    background:#333;
+    border:none;
+    color:white;
+    padding:15px;
+    border-radius:10px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.odd-btn:hover{
+    background:#00aa44;
+}
+
+/* BET SLIP */
+
+.bet-slip{
+    position:fixed;
+    right:15px;
+    bottom:100px;
+    background:#00ff66;
+    color:black;
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:28px;
+    font-weight:bold;
+    box-shadow:0 0 15px #000;
+}
+
+/* BOTTOM NAV */
+
+.bottom-nav{
+    position:fixed;
+    bottom:0;
+    width:100%;
+    background:#111;
+    display:flex;
+    justify-content:space-around;
+    padding:12px 0;
+    border-top:2px solid #222;
+}
+
+.nav-item{
+    text-align:center;
+    color:white;
+    font-size:18px;
+}
+
+.nav-item p{
+    font-size:12px;
+    margin-top:5px;
+}
+
+.active-nav{
+    color:#00ff66;
+}
+
+/* PROFILE PANEL */
+
+.profile-box{
+    background:#1b1b1b;
+    margin:15px;
+    padding:20px;
+    border-radius:15px;
+}
+
+.profile-top{
     display:flex;
     align-items:center;
     gap:15px;
@@ -54,7 +202,7 @@ body{
     width:70px;
     height:70px;
     border-radius:50%;
-    background:#ffcc00;
+    background:#00ff66;
     color:black;
     display:flex;
     justify-content:center;
@@ -63,155 +211,18 @@ body{
     font-weight:bold;
 }
 
-/* DASHBOARD */
-
-.dashboard{
+.stats{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-    gap:15px;
-    padding:20px;
-}
-
-.card{
-    background:#1b1b1b;
-    padding:20px;
-    border-radius:15px;
-    text-align:center;
-}
-
-.card h3{
-    margin:0;
-    color:#ffcc00;
-}
-
-.card p{
-    font-size:28px;
-    margin-top:10px;
-}
-
-/* MATCHES */
-
-.match{
-    background:#1a1a1a;
-    margin:20px;
-    padding:20px;
-    border-radius:15px;
-}
-
-.league{
-    color:#ffcc00;
-    margin-bottom:15px;
-}
-
-.teams{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    text-align:center;
-}
-
-.team{
-    width:35%;
-}
-
-.team img{
-    width:70px;
-}
-
-.vs{
-    font-size:22px;
-    color:#ffcc00;
-}
-
-.buttons{
-    margin-top:20px;
-    display:flex;
+    grid-template-columns:repeat(2,1fr);
     gap:10px;
+    margin-top:20px;
 }
 
-button{
-    flex:1;
-    padding:12px;
-    border:none;
+.stat-card{
+    background:#2a2a2a;
+    padding:15px;
     border-radius:10px;
-    font-size:16px;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-.home{
-    background:#d00000;
-    color:white;
-}
-
-.draw{
-    background:gray;
-    color:white;
-}
-
-.away{
-    background:#0077ff;
-    color:white;
-}
-
-.result{
-    margin-top:15px;
     text-align:center;
-}
-
-/* LIVE */
-
-.live{
-    color:red;
-    font-weight:bold;
-    animation:blink 1s infinite;
-}
-
-@keyframes blink{
-    50%{
-        opacity:0;
-    }
-}
-
-/* FOOTBALL */
-
-.ball{
-    text-align:center;
-    font-size:60px;
-    animation:spin 4s linear infinite;
-}
-
-@keyframes spin{
-    100%{
-        transform:rotate(360deg);
-    }
-}
-
-/* NAVIGATION */
-
-.bottom-nav{
-    position:fixed;
-    bottom:0;
-    width:100%;
-    background:#111;
-    display:flex;
-    justify-content:space-around;
-    padding:10px 0;
-    border-top:2px solid #222;
-}
-
-.nav-item{
-    text-align:center;
-    color:white;
-}
-
-.nav-item p{
-    margin:5px 0 0;
-    font-size:12px;
-}
-
-.active{
-    color:#ffcc00;
 }
 
 </style>
@@ -224,7 +235,7 @@ button{
 <div class="header">
 
 <div class="logo">
-⚽ ArenaBet
+ArenaBet
 </div>
 
 <div class="wallet">
@@ -233,9 +244,43 @@ button{
 
 </div>
 
+<!-- BANNER -->
+
+<div class="banner">
+🔥 UEFA Champions League Final Betting Open
+</div>
+
+<!-- CATEGORIES -->
+
+<div class="categories">
+
+<div class="category active-category">
+⚽ Football
+</div>
+
+<div class="category">
+🏀 Basketball
+</div>
+
+<div class="category">
+🎾 Tennis
+</div>
+
+<div class="category">
+🎮 eSports
+</div>
+
+<div class="category">
+🏏 Cricket
+</div>
+
+</div>
+
 <!-- PROFILE -->
 
-<div class="profile-section">
+<div class="profile-box">
+
+<div class="profile-top">
 
 <div class="avatar">
 A
@@ -243,146 +288,135 @@ A
 
 <div>
 <h2>Abass</h2>
-<p>Top Predictor 🔥</p>
+<p>VIP Predictor ⭐</p>
 </div>
 
 </div>
 
-<!-- DASHBOARD -->
+<div class="stats">
 
-<div class="dashboard">
-
-<div class="card">
-<h3>Total Votes</h3>
-<p id="totalVotes">0</p>
+<div class="stat-card">
+<h3>Balance</h3>
+<p>₦25,000</p>
 </div>
 
-<div class="card">
+<div class="stat-card">
 <h3>Wins</h3>
 <p>12</p>
 </div>
 
-<div class="card">
+<div class="stat-card">
+<h3>Tickets</h3>
+<p>45</p>
+</div>
+
+<div class="stat-card">
 <h3>Rank</h3>
 <p>#1</p>
 </div>
 
 </div>
 
-<div class="ball">⚽</div>
+</div>
 
-<!-- MATCH 1 -->
+<!-- MATCHES -->
 
 <div class="match">
 
-<div class="league">
-🏆 Champions League <span class="live">LIVE</span>
+<div class="match-header">
+<span>UEFA Champions League</span>
+<span class="live">LIVE</span>
 </div>
 
 <div class="teams">
 
-<div class="team">
-<img src="https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg">
-<h3>Arsenal</h3>
+<div class="team-row">
+<span>Arsenal</span>
+<span>⚽</span>
 </div>
 
-<div class="vs">
-VS
-</div>
-
-<div class="team">
-<img src="https://upload.wikimedia.org/wikipedia/en/a/a7/Paris_Saint-Germain_F.C..svg">
-<h3>PSG</h3>
+<div class="team-row">
+<span>PSG</span>
+<span>⚽</span>
 </div>
 
 </div>
 
-<div class="buttons">
+<div class="odds">
 
-<button class="home" onclick="vote('a1')">
-Home
+<button class="odd-btn" onclick="betPlaced()">
+Home 2.10
 </button>
 
-<button class="draw" onclick="vote('a2')">
-Draw
+<button class="odd-btn" onclick="betPlaced()">
+Draw 3.50
 </button>
 
-<button class="away" onclick="vote('a3')">
-Away
+<button class="odd-btn" onclick="betPlaced()">
+Away 2.80
 </button>
 
 </div>
 
-<div class="result">
-Home: <span id="a1">0</span> |
-Draw: <span id="a2">0</span> |
-Away: <span id="a3">0</span>
 </div>
-
-</div>
-
-<!-- MATCH 2 -->
 
 <div class="match">
 
-<div class="league">
-⚽ Premier League
+<div class="match-header">
+<span>Premier League</span>
+<span>Today</span>
 </div>
 
 <div class="teams">
 
-<div class="team">
-<img src="https://upload.wikimedia.org/wikipedia/en/f/fd/Manchester_City_FC_badge.svg">
-<h3>Haaland</h3>
+<div class="team-row">
+<span>Haaland FC</span>
+<span>⚽</span>
 </div>
 
-<div class="vs">
-VS
-</div>
-
-<div class="team">
-<img src="https://upload.wikimedia.org/wikipedia/commons/0/01/Nigeria_Football_Federation_logo.svg">
-<h3>Osimhen</h3>
+<div class="team-row">
+<span>Osimhen XI</span>
+<span>⚽</span>
 </div>
 
 </div>
 
-<div class="buttons">
+<div class="odds">
 
-<button class="home" onclick="vote('b1')">
-Home
+<button class="odd-btn" onclick="betPlaced()">
+Home 1.95
 </button>
 
-<button class="draw" onclick="vote('b2')">
-Draw
+<button class="odd-btn" onclick="betPlaced()">
+Draw 3.10
 </button>
 
-<button class="away" onclick="vote('b3')">
-Away
+<button class="odd-btn" onclick="betPlaced()">
+Away 2.55
 </button>
 
 </div>
 
-<div class="result">
-Home: <span id="b1">0</span> |
-Draw: <span id="b2">0</span> |
-Away: <span id="b3">0</span>
 </div>
 
+<!-- BET SLIP -->
+
+<div class="bet-slip">
+🎟️
 </div>
 
 <!-- BOTTOM NAV -->
 
 <div class="bottom-nav">
 
-<div class="nav-item active">
+<div class="nav-item active-nav">
 🏠
 <p>Home</p>
 </div>
 
 <div class="nav-item">
 ⚽
-<p>Matches</p>
+<p>Sports</p>
 </div>
 
 <div class="nav-item">
@@ -399,17 +433,9 @@ Away: <span id="b3">0</span>
 
 <script>
 
-let total = 0;
+function betPlaced(){
 
-function vote(id){
-
-let count = document.getElementById(id);
-
-count.innerText = Number(count.innerText) + 1;
-
-total++;
-
-document.getElementById("totalVotes").innerText = total;
+alert("Bet Added To Ticket 🎟️");
 
 }
 
