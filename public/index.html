@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Football Battle Voting</title>
+<title>Football Combat Arena</title>
 
 <style>
 
@@ -12,7 +12,7 @@ body{
     margin:0;
     padding:20px;
     font-family:Arial;
-    background:#111;
+    background:#0d0d0d;
     color:white;
 }
 
@@ -21,24 +21,37 @@ h1{
     color:#ffcc00;
 }
 
+.ball{
+    text-align:center;
+    font-size:70px;
+    animation:spin 4s linear infinite;
+}
+
+@keyframes spin{
+    100%{
+        transform:rotate(360deg);
+    }
+}
+
 .match{
-    background:#1e1e1e;
+    background:#1b1b1b;
     padding:20px;
     margin-top:25px;
     border-radius:15px;
+    box-shadow:0 0 10px #000;
 }
 
 .players{
-    font-size:24px;
     text-align:center;
+    font-size:24px;
     margin-bottom:20px;
 }
 
 .buttons{
     display:flex;
     justify-content:center;
-    flex-wrap:wrap;
     gap:10px;
+    flex-wrap:wrap;
 }
 
 button{
@@ -60,26 +73,14 @@ button{
 }
 
 .away{
-    background:#0096ff;
+    background:#0077ff;
     color:white;
 }
 
 .result{
-    text-align:center;
     margin-top:15px;
-    font-size:18px;
-}
-
-.ball{
     text-align:center;
-    font-size:60px;
-    animation:spin 4s linear infinite;
-}
-
-@keyframes spin{
-    100%{
-        transform:rotate(360deg);
-    }
+    font-size:18px;
 }
 
 </style>
@@ -87,85 +88,95 @@ button{
 
 <body>
 
-<h1>⚽ Football Combat Voting Arena 🔥</h1>
+<h1>⚽ Ultimate Football Combat Arena 🔥</h1>
 
 <div class="ball">⚽</div>
 
-<!-- Match 1 -->
-<div class="match">
+<!-- Match Template -->
 
-<div class="players">
-🔥 Saka VS McGinn 🔥
-</div>
+<div class="match">
+<div class="players">🔥 Saka VS McGinn 🔥</div>
 
 <div class="buttons">
-
-<button class="home" onclick="homeVote('m1home')">
-Home
-</button>
-
-<button class="draw" onclick="drawVote('m1draw')">
-Draw
-</button>
-
-<button class="away" onclick="awayVote('m1away')">
-Away
-</button>
-
+<button class="home" onclick="vote('a1')">Home</button>
+<button class="draw" onclick="vote('a2')">Draw</button>
+<button class="away" onclick="vote('a3')">Away</button>
 </div>
 
 <div class="result">
-Home: <span id="m1home">0</span> |
-Draw: <span id="m1draw">0</span> |
-Away: <span id="m1away">0</span>
+Home: <span id="a1">0</span> |
+Draw: <span id="a2">0</span> |
+Away: <span id="a3">0</span>
+</div>
 </div>
 
-</div>
-
-<!-- Match 2 -->
 <div class="match">
-
-<div class="players">
-⚡ Victor Osimhen VS Haaland ⚡
-</div>
+<div class="players">⚡ Osimhen VS Haaland ⚡</div>
 
 <div class="buttons">
-
-<button class="home" onclick="homeVote('m2home')">
-Home
-</button>
-
-<button class="draw" onclick="drawVote('m2draw')">
-Draw
-</button>
-
-<button class="away" onclick="awayVote('m2away')">
-Away
-</button>
-
+<button class="home" onclick="vote('b1')">Home</button>
+<button class="draw" onclick="vote('b2')">Draw</button>
+<button class="away" onclick="vote('b3')">Away</button>
 </div>
 
 <div class="result">
-Home: <span id="m2home">0</span> |
-Draw: <span id="m2draw">0</span> |
-Away: <span id="m2away">0</span>
+Home: <span id="b1">0</span> |
+Draw: <span id="b2">0</span> |
+Away: <span id="b3">0</span>
+</div>
 </div>
 
+<div class="match">
+<div class="players">👑 Mbappé VS Vinicius Jr 👑</div>
+
+<div class="buttons">
+<button class="home" onclick="vote('c1')">Home</button>
+<button class="draw" onclick="vote('c2')">Draw</button>
+<button class="away" onclick="vote('c3')">Away</button>
+</div>
+
+<div class="result">
+Home: <span id="c1">0</span> |
+Draw: <span id="c2">0</span> |
+Away: <span id="c3">0</span>
+</div>
+</div>
+
+<div class="match">
+<div class="players">💥 Salah VS Son 💥</div>
+
+<div class="buttons">
+<button class="home" onclick="vote('d1')">Home</button>
+<button class="draw" onclick="vote('d2')">Draw</button>
+<button class="away" onclick="vote('d3')">Away</button>
+</div>
+
+<div class="result">
+Home: <span id="d1">0</span> |
+Draw: <span id="d2">0</span> |
+Away: <span id="d3">0</span>
+</div>
+</div>
+
+<div class="match">
+<div class="players">🚀 Bellingham VS Pedri 🚀</div>
+
+<div class="buttons">
+<button class="home" onclick="vote('e1')">Home</button>
+<button class="draw" onclick="vote('e2')">Draw</button>
+<button class="away" onclick="vote('e3')">Away</button>
+</div>
+
+<div class="result">
+Home: <span id="e1">0</span> |
+Draw: <span id="e2">0</span> |
+Away: <span id="e3">0</span>
+</div>
 </div>
 
 <script>
 
-function homeVote(id){
-    let count = document.getElementById(id);
-    count.innerText = Number(count.innerText) + 1;
-}
-
-function drawVote(id){
-    let count = document.getElementById(id);
-    count.innerText = Number(count.innerText) + 1;
-}
-
-function awayVote(id){
+function vote(id){
     let count = document.getElementById(id);
     count.innerText = Number(count.innerText) + 1;
 }
