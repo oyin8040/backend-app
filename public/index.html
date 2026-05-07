@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Football Voting Dashboard</title>
+<title>Football Voting Arena</title>
 
 <style>
 
@@ -13,7 +13,10 @@ body{
     font-family:Arial;
     background:#0d0d0d;
     color:white;
+    padding-bottom:90px;
 }
+
+/* HEADER */
 
 .header{
     background:#111;
@@ -30,77 +33,109 @@ body{
     font-weight:bold;
 }
 
-.profile{
+.wallet{
+    background:#ffcc00;
+    color:black;
+    padding:8px 15px;
+    border-radius:10px;
+    font-weight:bold;
+}
+
+/* PROFILE */
+
+.profile-section{
+    padding:20px;
     display:flex;
     align-items:center;
-    gap:10px;
+    gap:15px;
 }
 
 .avatar{
-    width:45px;
-    height:45px;
+    width:70px;
+    height:70px;
     border-radius:50%;
     background:#ffcc00;
     color:black;
     display:flex;
     justify-content:center;
     align-items:center;
+    font-size:30px;
     font-weight:bold;
 }
 
-.dashboard{
-    padding:20px;
-}
+/* DASHBOARD */
 
-.card-container{
+.dashboard{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-    margin-top:20px;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:15px;
+    padding:20px;
 }
 
 .card{
-    background:#1a1a1a;
-    padding:20px;
-    border-radius:15px;
-    box-shadow:0 0 10px black;
-}
-
-.card h2{
-    margin-top:0;
-    color:#ffcc00;
-}
-
-.stat{
-    font-size:35px;
-    margin-top:10px;
-}
-
-.match{
     background:#1b1b1b;
     padding:20px;
     border-radius:15px;
-    margin-top:25px;
+    text-align:center;
 }
 
-.players{
+.card h3{
+    margin:0;
+    color:#ffcc00;
+}
+
+.card p{
+    font-size:28px;
+    margin-top:10px;
+}
+
+/* MATCHES */
+
+.match{
+    background:#1a1a1a;
+    margin:20px;
+    padding:20px;
+    border-radius:15px;
+}
+
+.league{
+    color:#ffcc00;
+    margin-bottom:15px;
+}
+
+.teams{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
     text-align:center;
-    font-size:24px;
-    margin-bottom:20px;
+}
+
+.team{
+    width:35%;
+}
+
+.team img{
+    width:70px;
+}
+
+.vs{
+    font-size:22px;
+    color:#ffcc00;
 }
 
 .buttons{
+    margin-top:20px;
     display:flex;
-    justify-content:center;
     gap:10px;
-    flex-wrap:wrap;
 }
 
 button{
-    padding:12px 20px;
+    flex:1;
+    padding:12px;
     border:none;
     border-radius:10px;
-    font-size:18px;
+    font-size:16px;
+    font-weight:bold;
     cursor:pointer;
 }
 
@@ -122,7 +157,61 @@ button{
 .result{
     margin-top:15px;
     text-align:center;
-    font-size:18px;
+}
+
+/* LIVE */
+
+.live{
+    color:red;
+    font-weight:bold;
+    animation:blink 1s infinite;
+}
+
+@keyframes blink{
+    50%{
+        opacity:0;
+    }
+}
+
+/* FOOTBALL */
+
+.ball{
+    text-align:center;
+    font-size:60px;
+    animation:spin 4s linear infinite;
+}
+
+@keyframes spin{
+    100%{
+        transform:rotate(360deg);
+    }
+}
+
+/* NAVIGATION */
+
+.bottom-nav{
+    position:fixed;
+    bottom:0;
+    width:100%;
+    background:#111;
+    display:flex;
+    justify-content:space-around;
+    padding:10px 0;
+    border-top:2px solid #222;
+}
+
+.nav-item{
+    text-align:center;
+    color:white;
+}
+
+.nav-item p{
+    margin:5px 0 0;
+    font-size:12px;
+}
+
+.active{
+    color:#ffcc00;
 }
 
 </style>
@@ -130,108 +219,180 @@ button{
 
 <body>
 
+<!-- HEADER -->
+
 <div class="header">
 
 <div class="logo">
-⚽ Football Arena
+⚽ ArenaBet
 </div>
 
-<div class="profile">
-<div>
-<h4>Abass</h4>
-<p>Top Voter 🔥</p>
+<div class="wallet">
+₦25,000
 </div>
+
+</div>
+
+<!-- PROFILE -->
+
+<div class="profile-section">
 
 <div class="avatar">
 A
 </div>
+
+<div>
+<h2>Abass</h2>
+<p>Top Predictor 🔥</p>
 </div>
 
 </div>
+
+<!-- DASHBOARD -->
 
 <div class="dashboard">
 
-<h1>Welcome Back 👋</h1>
-
-<div class="card-container">
-
 <div class="card">
-<h2>Total Votes</h2>
-<div class="stat" id="totalVotes">0</div>
+<h3>Total Votes</h3>
+<p id="totalVotes">0</p>
 </div>
 
 <div class="card">
-<h2>Matches Played</h2>
-<div class="stat">5</div>
+<h3>Wins</h3>
+<p>12</p>
 </div>
 
 <div class="card">
-<h2>Rank</h2>
-<div class="stat">#1</div>
+<h3>Rank</h3>
+<p>#1</p>
 </div>
 
 </div>
 
-<!-- Match -->
+<div class="ball">⚽</div>
+
+<!-- MATCH 1 -->
 
 <div class="match">
 
-<div class="players">
-🔥 Saka VS McGinn 🔥
+<div class="league">
+🏆 Champions League <span class="live">LIVE</span>
+</div>
+
+<div class="teams">
+
+<div class="team">
+<img src="https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg">
+<h3>Arsenal</h3>
+</div>
+
+<div class="vs">
+VS
+</div>
+
+<div class="team">
+<img src="https://upload.wikimedia.org/wikipedia/en/a/a7/Paris_Saint-Germain_F.C..svg">
+<h3>PSG</h3>
+</div>
+
 </div>
 
 <div class="buttons">
 
-<button class="home" onclick="vote('m1')">
+<button class="home" onclick="vote('a1')">
 Home
 </button>
 
-<button class="draw" onclick="vote('m2')">
+<button class="draw" onclick="vote('a2')">
 Draw
 </button>
 
-<button class="away" onclick="vote('m3')">
+<button class="away" onclick="vote('a3')">
 Away
 </button>
 
 </div>
 
 <div class="result">
-Home: <span id="m1">0</span> |
-Draw: <span id="m2">0</span> |
-Away: <span id="m3">0</span>
+Home: <span id="a1">0</span> |
+Draw: <span id="a2">0</span> |
+Away: <span id="a3">0</span>
 </div>
 
 </div>
+
+<!-- MATCH 2 -->
 
 <div class="match">
 
-<div class="players">
-⚡ Osimhen VS Haaland ⚡
+<div class="league">
+⚽ Premier League
+</div>
+
+<div class="teams">
+
+<div class="team">
+<img src="https://upload.wikimedia.org/wikipedia/en/f/fd/Manchester_City_FC_badge.svg">
+<h3>Haaland</h3>
+</div>
+
+<div class="vs">
+VS
+</div>
+
+<div class="team">
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/01/Nigeria_Football_Federation_logo.svg">
+<h3>Osimhen</h3>
+</div>
+
 </div>
 
 <div class="buttons">
 
-<button class="home" onclick="vote('m4')">
+<button class="home" onclick="vote('b1')">
 Home
 </button>
 
-<button class="draw" onclick="vote('m5')">
+<button class="draw" onclick="vote('b2')">
 Draw
 </button>
 
-<button class="away" onclick="vote('m6')">
+<button class="away" onclick="vote('b3')">
 Away
 </button>
 
 </div>
 
 <div class="result">
-Home: <span id="m4">0</span> |
-Draw: <span id="m5">0</span> |
-Away: <span id="m6">0</span>
+Home: <span id="b1">0</span> |
+Draw: <span id="b2">0</span> |
+Away: <span id="b3">0</span>
 </div>
 
+</div>
+
+<!-- BOTTOM NAV -->
+
+<div class="bottom-nav">
+
+<div class="nav-item active">
+🏠
+<p>Home</p>
+</div>
+
+<div class="nav-item">
+⚽
+<p>Matches</p>
+</div>
+
+<div class="nav-item">
+🎟️
+<p>Bets</p>
+</div>
+
+<div class="nav-item">
+👤
+<p>Profile</p>
 </div>
 
 </div>
