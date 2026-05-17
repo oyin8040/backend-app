@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,438 +9,51 @@
 
 <style>
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
 body{
-    font-family:Arial;
     background:#121212;
     color:white;
-    padding-bottom:90px;
-}
-
-/* TOP HEADER */
-
-.header{
-    background:#111;
-    padding:15px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    position:sticky;
-    top:0;
-    z-index:1000;
-    border-bottom:2px solid #222;
-}
-
-.logo{
-    color:#00ff66;
-    font-size:26px;
-    font-weight:bold;
-}
-
-.wallet{
-    background:#00ff66;
-    color:black;
-    padding:8px 15px;
-    border-radius:20px;
-    font-weight:bold;
-}
-
-/* LIVE BANNER */
-
-.banner{
-    background:linear-gradient(to right,#00aa44,#00ff66);
-    padding:15px;
+    font-family:Arial;
     text-align:center;
-    font-weight:bold;
-    color:black;
+    padding:40px;
 }
 
-/* CATEGORY MENU */
-
-.categories{
-    display:flex;
-    overflow-x:auto;
-    gap:10px;
-    padding:15px;
-    background:#1b1b1b;
-}
-
-.category{
-    background:#2a2a2a;
-    padding:10px 18px;
-    border-radius:20px;
-    white-space:nowrap;
-}
-
-.active-category{
-    background:#00ff66;
-    color:black;
-    font-weight:bold;
-}
-
-/* MATCH CARD */
-
-.match{
-    background:#1c1c1c;
-    margin:15px;
-    border-radius:15px;
-    overflow:hidden;
-}
-
-.match-header{
-    background:#2a2a2a;
-    padding:10px;
-    display:flex;
-    justify-content:space-between;
-    font-size:14px;
-}
-
-.live{
-    color:red;
-    font-weight:bold;
-}
-
-.teams{
-    padding:20px;
-}
-
-.team-row{
-    display:flex;
-    justify-content:space-between;
-    margin-bottom:15px;
-    font-size:18px;
-}
-
-.odds{
-    display:flex;
-    gap:8px;
-    padding:15px;
-}
-
-.odd-btn{
-    flex:1;
-    background:#333;
+button{
+    padding:15px 30px;
     border:none;
-    color:white;
-    padding:15px;
     border-radius:10px;
-    font-size:16px;
-    cursor:pointer;
-}
-
-.odd-btn:hover{
-    background:#00aa44;
-}
-
-/* BET SLIP */
-
-.bet-slip{
-    position:fixed;
-    right:15px;
-    bottom:100px;
     background:#00ff66;
     color:black;
-    width:70px;
-    height:70px;
-    border-radius:50%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:28px;
-    font-weight:bold;
-    box-shadow:0 0 15px #000;
-}
-
-/* BOTTOM NAV */
-
-.bottom-nav{
-    position:fixed;
-    bottom:0;
-    width:100%;
-    background:#111;
-    display:flex;
-    justify-content:space-around;
-    padding:12px 0;
-    border-top:2px solid #222;
-}
-
-.nav-item{
-    text-align:center;
-    color:white;
     font-size:18px;
-}
-
-.nav-item p{
-    font-size:12px;
-    margin-top:5px;
-}
-
-.active-nav{
-    color:#00ff66;
-}
-
-/* PROFILE PANEL */
-
-.profile-box{
-    background:#1b1b1b;
-    margin:15px;
-    padding:20px;
-    border-radius:15px;
-}
-
-.profile-top{
-    display:flex;
-    align-items:center;
-    gap:15px;
-}
-
-.avatar{
-    width:70px;
-    height:70px;
-    border-radius:50%;
-    background:#00ff66;
-    color:black;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:30px;
-    font-weight:bold;
-}
-
-.stats{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:10px;
-    margin-top:20px;
-}
-
-.stat-card{
-    background:#2a2a2a;
-    padding:15px;
-    border-radius:10px;
-    text-align:center;
 }
 
 </style>
+
 </head>
 
 <body>
 
-<!-- HEADER -->
+<h1>⚽ ArenaBet</h1>
 
-<div class="header">
+<p>Football Voting & Betting App</p>
 
-<div class="logo">
-ArenaBet
-</div>
-
-<div class="wallet">
-₦25,000
-</div>
-
-</div>
-
-<!-- BANNER -->
-
-<div class="banner">
-🔥 UEFA Champions League Final Betting Open
-</div>
-
-<!-- CATEGORIES -->
-
-<div class="categories">
-
-<div class="category active-category">
-⚽ Football
-</div>
-
-<div class="category">
-🏀 Basketball
-</div>
-
-<div class="category">
-🎾 Tennis
-</div>
-
-<div class="category">
-🎮 eSports
-</div>
-
-<div class="category">
-🏏 Cricket
-</div>
-
-</div>
-
-<!-- PROFILE -->
-
-<div class="profile-box">
-
-<div class="profile-top">
-
-<div class="avatar">
-A
-</div>
-
-<div>
-<h2>Abass</h2>
-<p>VIP Predictor ⭐</p>
-</div>
-
-</div>
-
-<div class="stats">
-
-<div class="stat-card">
-<h3>Balance</h3>
-<p>₦25,000</p>
-</div>
-
-<div class="stat-card">
-<h3>Wins</h3>
-<p>12</p>
-</div>
-
-<div class="stat-card">
-<h3>Tickets</h3>
-<p>45</p>
-</div>
-
-<div class="stat-card">
-<h3>Rank</h3>
-<p>#1</p>
-</div>
-
-</div>
-
-</div>
-
-<!-- MATCHES -->
-
-<div class="match">
-
-<div class="match-header">
-<span>UEFA Champions League</span>
-<span class="live">LIVE</span>
-</div>
-
-<div class="teams">
-
-<div class="team-row">
-<span>Arsenal</span>
-<span>⚽</span>
-</div>
-
-<div class="team-row">
-<span>PSG</span>
-<span>⚽</span>
-</div>
-
-</div>
-
-<div class="odds">
-
-<button class="odd-btn" onclick="betPlaced()">
-Home 2.10
+<button onclick="signup()">
+Signup
 </button>
-
-<button class="odd-btn" onclick="betPlaced()">
-Draw 3.50
-</button>
-
-<button class="odd-btn" onclick="betPlaced()">
-Away 2.80
-</button>
-
-</div>
-
-</div>
-
-<div class="match">
-
-<div class="match-header">
-<span>Premier League</span>
-<span>Today</span>
-</div>
-
-<div class="teams">
-
-<div class="team-row">
-<span>Haaland FC</span>
-<span>⚽</span>
-</div>
-
-<div class="team-row">
-<span>Osimhen XI</span>
-<span>⚽</span>
-</div>
-
-</div>
-
-<div class="odds">
-
-<button class="odd-btn" onclick="betPlaced()">
-Home 1.95
-</button>
-
-<button class="odd-btn" onclick="betPlaced()">
-Draw 3.10
-</button>
-
-<button class="odd-btn" onclick="betPlaced()">
-Away 2.55
-</button>
-
-</div>
-
-</div>
-
-<!-- BET SLIP -->
-
-<div class="bet-slip">
-🎟️
-</div>
-
-<!-- BOTTOM NAV -->
-
-<div class="bottom-nav">
-
-<div class="nav-item active-nav">
-🏠
-<p>Home</p>
-</div>
-
-<div class="nav-item">
-⚽
-<p>Sports</p>
-</div>
-
-<div class="nav-item">
-🎟️
-<p>Bets</p>
-</div>
-
-<div class="nav-item">
-👤
-<p>Profile</p>
-</div>
-
-</div>
 
 <script>
 
-function betPlaced(){
+async function signup(){
 
-alert("Bet Added To Ticket 🎟️");
+    const response = await fetch("/api/auth/signup");
+
+    const data = await response.json();
+
+    alert(data.message);
 
 }
 
 </script>
 
 </body>
-    </html> 
+
+</html>
