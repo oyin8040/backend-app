@@ -1,8 +1,10 @@
 
-const signup = (req,res)=>{
+    const signup = (req,res)=>{
+
+    console.log(req.body);
 
     res.json({
-        message:"User signup controller working"
+        message:"Signup successful"
     });
 
 };
@@ -10,7 +12,7 @@ const signup = (req,res)=>{
 const login = (req,res)=>{
 
     res.json({
-        message:"User login controller working"
+        message:"Login working"
     });
 
 };
