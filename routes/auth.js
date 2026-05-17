@@ -2,12 +2,13 @@ const express = require("express");
 
 const router = express.Router();
 
-router.post("/signup",(req,res)=>{
+const {
+    signup,
+    login
+} = require("../controllers/authController");
 
-    res.json({
-        message:"Signup route working"
-    });
+router.post("/signup",signup);
 
-});
+router.post("/login",login);
 
-module.exports = router; 
+module.exports = router;
