@@ -1,27 +1,21 @@
-const express = require("express");
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-const path = require("path");
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDsdGQL-FYLsQdQipQPa8M0BCb0SHg4UTY",
+  authDomain: "gen-lang-client-0173296700.firebaseapp.com",
+  projectId: "gen-lang-client-0173296700",
+  storageBucket: "gen-lang-client-0173296700.firebasestorage.app",
+  messagingSenderId: "109891504599",
+  appId: "1:109891504599:web:39c7f92da4c6e937436392",
+  measurementId: "G-ZXYWVV4VQF"
+};
 
-const app = express();
-
-app.use(express.json());
-
-app.use(express.static("public"));
-
-const authRoutes = require("./routes/auth");
-
-app.use("/api/auth",authRoutes);
-
-app.get("/",(req,res)=>{
-
-    res.sendFile(path.join(__dirname,"public","index.html"));
-
-});
-
-const PORT = process.env.PORT || 3000;
-
-app.listen(PORT,()=>{
-
-    console.log("Server running on port " + PORT);
-
-});
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
