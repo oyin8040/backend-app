@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
@@ -10,26 +9,55 @@
 
 <style>
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
 body{
     background:#121212;
     color:white;
     font-family:Arial;
+    padding-bottom:90px;
+}
+
+/* HEADER */
+
+.header{
+    background:#111;
+    padding:15px;
     display:flex;
-    justify-content:center;
+    justify-content:space-between;
     align-items:center;
-    height:100vh;
+    border-bottom:2px solid #222;
 }
 
-.container{
-    width:90%;
-    max-width:400px;
-    background:#1c1c1c;
-    padding:30px;
+.logo{
+    color:#00ff66;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.wallet{
+    background:#00ff66;
+    color:black;
+    padding:8px 15px;
+    border-radius:20px;
+    font-weight:bold;
+}
+
+/* AUTH */
+
+.auth-box{
+    background:#1b1b1b;
+    margin:20px;
+    padding:20px;
     border-radius:15px;
-    text-align:center;
 }
 
-h1{
+.auth-box h2{
+    margin-bottom:15px;
     color:#00ff66;
 }
 
@@ -56,19 +84,137 @@ button{
     font-weight:bold;
 }
 
+/* MATCHES */
+
+.match{
+    background:#1c1c1c;
+    margin:15px;
+    border-radius:15px;
+    overflow:hidden;
+}
+
+.match-header{
+    background:#2a2a2a;
+    padding:10px;
+    display:flex;
+    justify-content:space-between;
+}
+
+.live{
+    color:red;
+    font-weight:bold;
+}
+
+.teams{
+    padding:20px;
+}
+
+.team-row{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:15px;
+    font-size:18px;
+}
+
+.odds{
+    display:flex;
+    gap:8px;
+    padding:15px;
+}
+
+.odd-btn{
+    flex:1;
+    background:#333;
+    border:none;
+    color:white;
+    padding:15px;
+    border-radius:10px;
+}
+
+.odd-btn:hover{
+    background:#00aa44;
+}
+
+/* PROFILE */
+
+.profile{
+    background:#1b1b1b;
+    margin:15px;
+    padding:20px;
+    border-radius:15px;
+}
+
+.profile-top{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.avatar{
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    background:#00ff66;
+    color:black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:30px;
+    font-weight:bold;
+}
+
+/* NAVIGATION */
+
+.bottom-nav{
+    position:fixed;
+    bottom:0;
+    width:100%;
+    background:#111;
+    display:flex;
+    justify-content:space-around;
+    padding:12px 0;
+    border-top:2px solid #222;
+}
+
+.nav-item{
+    text-align:center;
+    color:white;
+}
+
+.nav-item p{
+    font-size:12px;
+    margin-top:5px;
+}
+
+.active{
+    color:#00ff66;
+}
+
 </style>
 
 </head>
 
 <body>
 
-<div class="container">
+<!-- HEADER -->
 
-<h1>⚽ ArenaBet</h1>
+<div class="header">
 
-<p>Create Account</p>
+<div class="logo">
+ArenaBet
+</div>
 
-<input type="text" id="username" placeholder="Username">
+<div class="wallet">
+₦25,000
+</div>
+
+</div>
+
+<!-- SIGNUP -->
+
+<div class="auth-box">
+
+<h2>Create Account</h2>
 
 <input type="email" id="email" placeholder="Email">
 
@@ -78,42 +224,230 @@ button{
 Signup
 </button>
 
+<button onclick="login()">
+Login
+</button>
+
 </div>
+
+<!-- PROFILE -->
+
+<div class="profile">
+
+<div class="profile-top">
+
+<div class="avatar">
+A
+</div>
+
+<div>
+<h2>Abass</h2>
+<p>VIP Predictor ⭐</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- MATCHES -->
+
+<div class="match">
+
+<div class="match-header">
+
+<span>UEFA Champions League</span>
+
+<span class="live">
+LIVE
+</span>
+
+</div>
+
+<div class="teams">
+
+<div class="team-row">
+<span>Arsenal</span>
+<span>⚽</span>
+</div>
+
+<div class="team-row">
+<span>PSG</span>
+<span>⚽</span>
+</div>
+
+</div>
+
+<div class="odds">
+
+<button class="odd-btn">
+Home 2.10
+</button>
+
+<button class="odd-btn">
+Draw 3.50
+</button>
+
+<button class="odd-btn">
+Away 2.80
+</button>
+
+</div>
+
+</div>
+
+<div class="match">
+
+<div class="match-header">
+
+<span>Premier League</span>
+
+<span>
+Today
+</span>
+
+</div>
+
+<div class="teams">
+
+<div class="team-row">
+<span>Haaland FC</span>
+<span>⚽</span>
+</div>
+
+<div class="team-row">
+<span>Osimhen XI</span>
+<span>⚽</span>
+</div>
+
+</div>
+
+<div class="odds">
+
+<button class="odd-btn">
+Home 1.90
+</button>
+
+<button class="odd-btn">
+Draw 3.00
+</button>
+
+<button class="odd-btn">
+Away 2.50
+</button>
+
+</div>
+
+</div>
+
+<!-- NAVIGATION -->
+
+<div class="bottom-nav">
+
+<div class="nav-item active">
+🏠
+<p>Home</p>
+</div>
+
+<div class="nav-item">
+⚽
+<p>Matches</p>
+</div>
+
+<div class="nav-item">
+🎟️
+<p>Tickets</p>
+</div>
+
+<div class="nav-item">
+👤
+<p>Profile</p>
+</div>
+
+</div>
+
+<!-- FIREBASE -->
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
 
 <script>
 
-async function signup(){
+const firebaseConfig = {
 
-    const username = document.getElementById("username").value;
+  apiKey: "AIzaSyDsdGQL-FYLsQdQipQPa8M0BCb0SHg4UTY",
+
+  authDomain: "gen-lang-client-0173296700.firebaseapp.com",
+
+  projectId: "gen-lang-client-0173296700",
+
+  storageBucket: "gen-lang-client-0173296700.firebasestorage.app",
+
+  messagingSenderId: "109891504599",
+
+  appId: "1:109891504599:web:39c7f92da4c6e937436392",
+
+  measurementId: "G-ZXYWVV4VQF"
+
+};
+
+firebase.initializeApp(firebaseConfig);
+
+const auth = firebase.auth();
+
+/* SIGNUP */
+
+function signup(){
 
     const email = document.getElementById("email").value;
 
     const password = document.getElementById("password").value;
 
-    const response = await fetch("/api/auth/signup",{
+    auth.createUserWithEmailAndPassword(email,password)
 
-        method:"POST",
+    .then((userCredential)=>{
 
-        headers:{
-            "Content-Type":"application/json"
-        },
+        alert("Account Created Successfully 🔥");
 
-        body:JSON.stringify({
-            username,
-            email,
-            password
-        })
+        console.log(userCredential.user);
+
+    })
+
+    .catch((error)=>{
+
+        alert(error.message);
 
     });
 
-    const data = await response.json();
+}
 
-    alert(data.message);
+/* LOGIN */
+
+function login(){
+
+    const email = document.getElementById("email").value;
+
+    const password = document.getElementById("password").value;
+
+    auth.signInWithEmailAndPassword(email,password)
+
+    .then((userCredential)=>{
+
+        alert("Login Successful ✅");
+
+        console.log(userCredential.user);
+
+    })
+
+    .catch((error)=>{
+
+        alert(error.message);
+
+    });
 
 }
 
 </script>
 
 </body>
-
 </html>
