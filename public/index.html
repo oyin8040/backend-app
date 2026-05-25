@@ -5,189 +5,32 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ArenaBet</title>
+<title>Dashboard</title>
 
 <style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
 
 body{
     background:#121212;
     color:white;
     font-family:Arial;
-    padding-bottom:90px;
+    padding:20px;
 }
 
-/* HEADER */
-
-.header{
-    background:#111;
-    padding:15px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    border-bottom:2px solid #222;
-}
-
-.logo{
-    color:#00ff66;
-    font-size:28px;
-    font-weight:bold;
-}
-
-.wallet{
-    background:#00ff66;
-    color:black;
-    padding:8px 15px;
-    border-radius:20px;
-    font-weight:bold;
-}
-
-/* AUTH */
-
-.auth-box{
+.card{
     background:#1b1b1b;
-    margin:20px;
     padding:20px;
     border-radius:15px;
-}
-
-.auth-box h2{
-    margin-bottom:15px;
-    color:#00ff66;
-}
-
-input{
-    width:100%;
-    padding:15px;
-    margin-top:15px;
-    border:none;
-    border-radius:10px;
-    background:#333;
-    color:white;
-    font-size:16px;
+    margin-top:20px;
 }
 
 button{
-    width:100%;
     padding:15px;
-    margin-top:20px;
+    width:100%;
     border:none;
     border-radius:10px;
     background:#00ff66;
     color:black;
     font-size:18px;
-    font-weight:bold;
-}
-
-/* MATCHES */
-
-.match{
-    background:#1c1c1c;
-    margin:15px;
-    border-radius:15px;
-    overflow:hidden;
-}
-
-.match-header{
-    background:#2a2a2a;
-    padding:10px;
-    display:flex;
-    justify-content:space-between;
-}
-
-.live{
-    color:red;
-    font-weight:bold;
-}
-
-.teams{
-    padding:20px;
-}
-
-.team-row{
-    display:flex;
-    justify-content:space-between;
-    margin-bottom:15px;
-    font-size:18px;
-}
-
-.odds{
-    display:flex;
-    gap:8px;
-    padding:15px;
-}
-
-.odd-btn{
-    flex:1;
-    background:#333;
-    border:none;
-    color:white;
-    padding:15px;
-    border-radius:10px;
-}
-
-.odd-btn:hover{
-    background:#00aa44;
-}
-
-/* PROFILE */
-
-.profile{
-    background:#1b1b1b;
-    margin:15px;
-    padding:20px;
-    border-radius:15px;
-}
-
-.profile-top{
-    display:flex;
-    align-items:center;
-    gap:15px;
-}
-
-.avatar{
-    width:70px;
-    height:70px;
-    border-radius:50%;
-    background:#00ff66;
-    color:black;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:30px;
-    font-weight:bold;
-}
-
-/* NAVIGATION */
-
-.bottom-nav{
-    position:fixed;
-    bottom:0;
-    width:100%;
-    background:#111;
-    display:flex;
-    justify-content:space-around;
-    padding:12px 0;
-    border-top:2px solid #222;
-}
-
-.nav-item{
-    text-align:center;
-    color:white;
-}
-
-.nav-item p{
-    font-size:12px;
-    margin-top:5px;
-}
-
-.active{
-    color:#00ff66;
 }
 
 </style>
@@ -196,254 +39,37 @@ button{
 
 <body>
 
-<!-- HEADER -->
+<h1>⚽ ArenaBet Dashboard</h1>
 
-<div class="header">
+<div class="card">
 
-<div class="logo">
-ArenaBet
+<h2>Welcome Back 🔥</h2>
+
+<p id="userEmail"></p>
+
+<p>Wallet: ₦25,000</p>
+
+<p>Status: VIP Predictor ⭐</p>
+
 </div>
 
-<div class="wallet">
-₦25,000
-</div>
-
-</div>
-
-<!-- SIGNUP -->
-
-<div class="auth-box">
-
-<h2>Create Account</h2>
-
-<input type="email" id="email" placeholder="Email">
-
-<input type="password" id="password" placeholder="Password">
-
-<button onclick="signup()">
-Signup
+<button onclick="logout()">
+Logout
 </button>
-
-<button onclick="login()">
-Login
-</button>
-
-</div>
-
-<!-- PROFILE -->
-
-<div class="profile">
-
-<div class="profile-top">
-
-<div class="avatar">
-A
-</div>
-
-<div>
-<h2>Abass</h2>
-<p>VIP Predictor ⭐</p>
-</div>
-
-</div>
-
-</div>
-
-<!-- MATCHES -->
-
-<div class="match">
-
-<div class="match-header">
-
-<span>UEFA Champions League</span>
-
-<span class="live">
-LIVE
-</span>
-
-</div>
-
-<div class="teams">
-
-<div class="team-row">
-<span>Arsenal</span>
-<span>⚽</span>
-</div>
-
-<div class="team-row">
-<span>PSG</span>
-<span>⚽</span>
-</div>
-
-</div>
-
-<div class="odds">
-
-<button class="odd-btn">
-Home 2.10
-</button>
-
-<button class="odd-btn">
-Draw 3.50
-</button>
-
-<button class="odd-btn">
-Away 2.80
-</button>
-
-</div>
-
-</div>
-
-<div class="match">
-
-<div class="match-header">
-
-<span>Premier League</span>
-
-<span>
-Today
-</span>
-
-</div>
-
-<div class="teams">
-
-<div class="team-row">
-<span>Haaland FC</span>
-<span>⚽</span>
-</div>
-
-<div class="team-row">
-<span>Osimhen XI</span>
-<span>⚽</span>
-</div>
-
-</div>
-
-<div class="odds">
-
-<button class="odd-btn">
-Home 1.90
-</button>
-
-<button class="odd-btn">
-Draw 3.00
-</button>
-
-<button class="odd-btn">
-Away 2.50
-</button>
-
-</div>
-
-</div>
-
-<!-- NAVIGATION -->
-
-<div class="bottom-nav">
-
-<div class="nav-item active">
-🏠
-<p>Home</p>
-</div>
-
-<div class="nav-item">
-⚽
-<p>Matches</p>
-</div>
-
-<div class="nav-item">
-🎟️
-<p>Tickets</p>
-</div>
-
-<div class="nav-item">
-👤
-<p>Profile</p>
-</div>
-
-</div>
-
-<!-- FIREBASE -->
-
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
-
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
 
 <script>
 
-const firebaseConfig = {
+const email = localStorage.getItem("userEmail");
 
-  apiKey: "AIzaSyDsdGQL-FYLsQdQipQPa8M0BCb0SHg4UTY",
+document.getElementById("userEmail").innerText = email;
 
-  authDomain: "gen-lang-client-0173296700.firebaseapp.com",
+/* LOGOUT */
 
-  projectId: "gen-lang-client-0173296700",
+function logout(){
 
-  storageBucket: "gen-lang-client-0173296700.firebasestorage.app",
+    localStorage.clear();
 
-  messagingSenderId: "109891504599",
-
-  appId: "1:109891504599:web:39c7f92da4c6e937436392",
-
-  measurementId: "G-ZXYWVV4VQF"
-
-};
-
-firebase.initializeApp(firebaseConfig);
-
-const auth = firebase.auth();
-
-/* SIGNUP */
-
-function signup(){
-
-    const email = document.getElementById("email").value;
-
-    const password = document.getElementById("password").value;
-
-    auth.createUserWithEmailAndPassword(email,password)
-
-    .then((userCredential)=>{
-
-        alert("Account Created Successfully 🔥");
-
-        console.log(userCredential.user);
-
-    })
-
-    .catch((error)=>{
-
-        alert(error.message);
-
-    });
-
-}
-
-/* LOGIN */
-
-function login(){
-
-    const email = document.getElementById("email").value;
-
-    const password = document.getElementById("password").value;
-
-    auth.signInWithEmailAndPassword(email,password)
-
-    .then((userCredential)=>{
-
-        alert("Login Successful ✅");
-
-        console.log(userCredential.user);
-
-    })
-
-    .catch((error)=>{
-
-        alert(error.message);
-
-    });
+    window.location.href = "index.html";
 
 }
 
