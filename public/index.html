@@ -1,18 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!DOCTYPE html><html lang="en">
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>ArenaBet</title>
-
-<link rel="stylesheet" href="style.css">
-
-<style>
-
+<title>ArenaBet</title><link rel="stylesheet" href="style.css"><style>
 *{
     margin:0;
     padding:0;
@@ -21,8 +11,8 @@
 
 body{
     background:#121212;
-    color:white;
-    font-family:Arial;
+    color:#ffffff;
+    font-family:Arial, sans-serif;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -33,31 +23,34 @@ body{
 .container{
     width:100%;
     max-width:420px;
-    background:#1b1b1b;
+    background:#1e1e1e;
     padding:30px;
     border-radius:20px;
-    box-shadow:0 0 20px rgba(0,0,0,0.5);
+    box-shadow:0 0 20px rgba(0,0,0,0.4);
 }
 
 .logo{
     text-align:center;
-    margin-bottom:30px;
+    margin-bottom:25px;
 }
 
 .logo h1{
-    color:#00ff66;
     font-size:42px;
+    color:#00ff66;
 }
 
 .logo p{
-    color:#999;
+    color:#aaaaaa;
     margin-top:10px;
+}
+
+.form-group{
+    margin-bottom:15px;
 }
 
 input{
     width:100%;
     padding:15px;
-    margin-top:15px;
     border:none;
     border-radius:12px;
     background:#2a2a2a;
@@ -73,261 +66,79 @@ input:focus{
 button{
     width:100%;
     padding:15px;
-    margin-top:20px;
     border:none;
     border-radius:12px;
-    background:#00cc55;
-    color:black;
-    font-size:18px;
-    font-weight:bold;
     cursor:pointer;
-}
-
-button:hover{
-    background:#00ff66;
-}
-
-.login-btn{
-    background:#0077ff;
-    color:white;
-}
-
-.login-btn:hover{
-    background:#3399ff;
-}
-
-.footer{
-    text-align:center;
-    margin-top:20px;
-    color:#888;
-    font-size:14px;
-}
-
-</style>
-
-</head>
-
-<body>
-
-<div class="container">
-
-<div class="logo">
-
-<h1>⚽ ArenaBet</h1>
-
-<p>Football Betting & Voting App</p>
-
-</div>
-
-<input
-type="text"
-id="username"
-placeholder="Username">
-
-<input
-type="email"
-id="email"
-placeholder="Email Address">
-
-<input
-type="password"
-id="password"
-placeholder="Password">
-
-<button onclick="signup()">
-Create Account
-</button>
-
-<button class="login-btn" onclick="login()">
-Login
-</button>
-
-<div class="footer">
-
-<p>
-Welcome to the future of football prediction 🔥
-</p>
-
-</div>
-
-</div>
-
-<!-- FIREBASE -->
-
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
-
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
-
-<!-- SCRIPT -->
-
-<script src="script.js"></script>
-
-</body>
-
-</html><!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>ArenaBet</title>
-
-<link rel="stylesheet" href="style.css">
-
-<style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-    background:#121212;
-    color:white;
-    font-family:Arial;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height:100vh;
-    padding:20px;
-}
-
-.container{
-    width:100%;
-    max-width:420px;
-    background:#1b1b1b;
-    padding:30px;
-    border-radius:20px;
-    box-shadow:0 0 20px rgba(0,0,0,0.5);
-}
-
-.logo{
-    text-align:center;
-    margin-bottom:30px;
-}
-
-.logo h1{
-    color:#00ff66;
-    font-size:42px;
-}
-
-.logo p{
-    color:#999;
-    margin-top:10px;
-}
-
-input{
-    width:100%;
-    padding:15px;
-    margin-top:15px;
-    border:none;
-    border-radius:12px;
-    background:#2a2a2a;
-    color:white;
     font-size:16px;
-}
-
-input:focus{
-    outline:none;
-    border:2px solid #00ff66;
-}
-
-button{
-    width:100%;
-    padding:15px;
-    margin-top:20px;
-    border:none;
-    border-radius:12px;
-    background:#00cc55;
-    color:black;
-    font-size:18px;
     font-weight:bold;
-    cursor:pointer;
+    margin-top:12px;
 }
 
-button:hover{
-    background:#00ff66;
+#createBtn{
+    background:#00cc66;
+    color:#000;
 }
 
-.login-btn{
+#loginBtn{
     background:#0077ff;
     color:white;
 }
 
-.login-btn:hover{
-    background:#3399ff;
+button:hover{
+    opacity:0.9;
+}
+
+#message{
+    margin-top:15px;
+    text-align:center;
+    color:#ffcc00;
 }
 
 .footer{
-    text-align:center;
     margin-top:20px;
+    text-align:center;
     color:#888;
     font-size:14px;
 }
-
-</style>
-
-</head>
-
-<body>
-
-<div class="container">
-
-<div class="logo">
-
-<h1>⚽ ArenaBet</h1>
-
-<p>Football Betting & Voting App</p>
-
+</style></head><body><div class="container"><div class="logo">
+    <h1>⚽ ArenaBet</h1>
+    <p>Predict Football • Earn Points • Win Rewards</p>
 </div>
 
-<input
-type="text"
-id="username"
-placeholder="Username">
+<div class="form-group">
+    <input
+        type="text"
+        id="username"
+        placeholder="Enter Username">
+</div>
 
-<input
-type="email"
-id="email"
-placeholder="Email Address">
+<div class="form-group">
+    <input
+        type="email"
+        id="email"
+        placeholder="Enter Email">
+</div>
 
-<input
-type="password"
-id="password"
-placeholder="Password">
+<div class="form-group">
+    <input
+        type="password"
+        id="password"
+        placeholder="Enter Password">
+</div>
 
-<button onclick="signup()">
-Create Account
+<button id="createBtn" onclick="signup()">
+    Create Account
 </button>
 
-<button class="login-btn" onclick="login()">
-Login
+<button id="loginBtn" onclick="login()">
+    Login
 </button>
+
+<p id="message"></p>
 
 <div class="footer">
-
-<p>
-Welcome to the future of football prediction 🔥
-</p>
-
+    Welcome Bonus: 100 Points 🎁
 </div>
 
-</div>
-
-<!-- FIREBASE -->
-
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
-
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
-
-<!-- SCRIPT -->
-
-<script src="script.js"></script>
-
-</body>
-
+</div><script type="module" src="script.js"></script></body>
 </html>
